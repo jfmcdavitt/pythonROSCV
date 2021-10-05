@@ -1,0 +1,18 @@
+#!/usr/bin/python
+import cv2
+import numpy as np
+
+cap = cv2.VideoCapture(0) #0 argument access which webcam, 0 being first index
+# or put the file name in the argument if you want it to open a video
+
+while True:
+    ret, frame = cap.read() #returns ret bool True if it works properly, frame the numpy array if the frame
+    cv2.imshow('frame', frame)
+
+    if cv2.waitKey(1) == ord('q'): #waitkey waits 1 milisec, if key is press returns the character or ord val of the key if q it quits
+        break
+
+cap.release()
+cv2.destroyAllWindows()
+
+
